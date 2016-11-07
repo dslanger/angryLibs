@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="angryLibs">
+  <head>
+    <meta charset="utf-8">
+    <title>angryLibs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="MainCtrl">
+    <div class="wrapper" >
+
+      <header class="header row">
+        <a href="/" class="smiley col span-3"><img src="/images/mad-lib-happy-face.png" alt="ngMadLibs" width="150" height="auto" class="smiley-image"></a>
+        <div class="logo col span-9">
+          <a href="/"><img src="/images/ng-mad-libs-logo.png" alt="ngMadLibs" class="logo-image"></a>
+          <h1 class="logo-tagline">Automate This!</h1>
+        </div>
+      </header>
+
+      <section class="prompts row">
+        <form class="prompts-form col span-12">
+        <h2 class="prompts-form__prompt">Provide the following words:</h2>
+        <div class="col span-4">
+          <input type="text" placeholder="female name" ng-model="femaleName">
+          <input type="text" placeholder="job title" ng-model="jobTitle">
+          <input type="text" placeholder="tedious task" ng-model="tediusTask">
+        </div>
+        <div class="col span-4">
+          <input type="text" placeholder="dirty task" ng-model="dirtyTask">
+          <input type="text" placeholder="celebrity" ng-model="celebrity">
+          <input type="text" placeholder="useless skill" ng-model="uselessSkill">
+        </div>
+        <div class="col span-4">
+          <input type="text" placeholder="obnoxious celebrity" ng-model="celebrity">
+          <input type="text" placeholder="huge number" ng-model="hugeNumber">
+          <input type="text" placeholder="adjective" ng-model="adjective">
+        </div>
+        <div class="col span-12">
+          <button class="button-submit">Get A Story</button>
+        </div>
+        </form>
+      </section>
+
+      <section class="story row">
+        <p>{{femaleName}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so she studied programming instead.</p>
+
+        <p>What a great decision! With her new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} faster.</p>
+
+
+      </section>
+
+    </div>
+
+  </body>
+</html>

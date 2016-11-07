@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.8rem;
+  color: #111;
+}
+
+h1, h2, h3, h4 { font-weight: 700; }
+h5, h6 { font-weight: 400; }
+h1 {font-size: 6.0rem;}
+h2 {font-size: 4.8rem;}
+h3 {font-size: 3.6rem;}
+h4 {font-size: 2.4rem;}
+h5 {font-size: 1.8rem;}
+h6 {font-size: 1.6rem;}
+
+p {
+  line-height: 2;
+  letter-spacing: .05rem;
+}
+
+.row {
+  width: 100%;
+  zoom: 1;
+  display: block;
+}
+
+.row:before,
+.row:after {
+  content: '';
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+.col {
+  float: left;
+  display: inline-block;
+}
+
+@media (max-width: 37.5rem) {
+  .col {
+    display: block;
+    margin: 0 auto;
+    width: 100% !important;
+    float: none;
+  }
+}
+
+.col:last-child {
+  float: right;
+}
+
+/*.span-1 {width: 10%;}
+.span-2 {width: 20%;}
+.span-3 {width: 30%;}
+.span-4 {width: 40%;}
+.span-5 {width: 50%;}
+.span-6 {width: 60%;}
+.span-7 {width: 70%;}
+.span-8 {width: 80%;}
+.span-9 {width: 90%;}
+.span-10 {width: 100%;}*/
+
+.span-1 {width: 8.333333%;}
+.span-2 {width: 16.66666%;}
+.span-3 {width: 24.99999%;}
+.span-4 {width: 33.33333%;}
+.span-5 {width: 41.66666%;}
+.span-6 {width: 49.99999%;}
+.span-7 {width: 58.33333%;}
+.span-8 {width: 66.66666%;}
+.span-9 {width: 74.99999%;}
+.span-10 {width: 83.33333%;}
+.span-11 {width: 91.66666%;}
+.span-12 {width: 100%;}
+
+.wrapper {
+  max-width: 100rem;
+  margin: 0 auto;
+  border: .4rem solid #333;
+}
+
+.header,
+.prompts,
+.story {
+  /*display: flex;
+  flex-direction: row;*/
+}
+
+.header {
+  border-bottom: .4rem solid #333;
+}
+
+.smiley {
+  padding: .6rem 5rem;
+  display: inline-block;
+}
+
+.smiley-image {
+  width: 15rem;
+  display: inline-block;
+  height: auto;
+}
+
+.logo {
+  text-align: center;
+  border-left: .4rem solid #333;
+}
+
+.logo-image {
+  width: 28rem;
+}
+
+.logo-tagline {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.prompts {
+  border-bottom: .4rem solid #333;
+}
+
+.prompts-form {
+  padding: 2rem 7rem;
+  margin-bottom: 6rem;
+}
+
+.prompts-form__prompt {
+  font-size: 4.5rem;
+  font-weight: 400;
+  margin-bottom: .5rem;
+}
+
+[type="text"] {
+  border: .2rem solid #333;
+  height: 5rem;
+  width: 95%;
+  margin: 1rem;
+  display: block;
+  margin: 2rem auto;
+  border-radius: .3rem;
+  text-indent: 1rem;
+  font-size: 1.8rem;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+}
+::-moz-placeholder {
+  color: #999;
+}
+:-ms-input-placeholder {
+  color: #999;
+}
+:-moz-placeholder {
+  color: #999;
+}
+
+.button-submit {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 400;
+  border: .2rem solid #D1474C;
+  color: #D1474C;
+  background: transparent;
+  padding: 1rem 10rem;
+  min-width: 25rem;
+  margin: 2rem auto 0;
+  cursor: pointer;
+  transition: all 500ms ease;
+  letter-spacing: .1rem;
+}
+
+.button-submit:hover,
+.button-submit:active,
+.button-submit:focus {
+  color: #fff;
+  background: #D1474C;
+}
+
+.button-submit:active {
+  opacity: .8;
+}
+
+.story {
+  padding: 2rem 7rem;
+}
