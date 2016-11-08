@@ -44,7 +44,7 @@ p {
 
 .col {
   float: left;
-  display: inline-block;
+  display: block;
 }
 
 @media (max-width: 37.5rem) {
@@ -106,15 +106,19 @@ p {
   display: inline-block;
 }
 
-.smiley-image {
-  width: 15rem;
-  display: inline-block;
-  height: auto;
-}
+/*.smiley-image {
+  display: block;
+}*/
 
 .logo {
   text-align: center;
-  border-left: .4rem solid #333;
+  border-left: 0;
+}
+
+@media (min-width: 1000px) {
+  .logo {
+    border-left: .4rem solid #333;
+  }
 }
 
 .logo-image {

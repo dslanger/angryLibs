@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-    <script src="app.js"></script>
+
   </head>
   <body ng-controller="MainCtrl">
     <div class="wrapper" >
@@ -39,12 +38,12 @@
           <input type="text" placeholder="adjective" ng-model="adjective">
         </div>
         <div class="col span-12">
-          <button class="button-submit">Get A Story</button>
+          <button class="button-submit" ng-click="toggleStory()">Get A Story</button>
         </div>
         </form>
       </section>
 
-      <section class="story row">
+      <section class="story row" ng-hide="hideStory">
         <p>{{femaleName}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so she studied programming instead.</p>
 
         <p>What a great decision! With her new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} faster.</p>
@@ -53,6 +52,7 @@
       </section>
 
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
