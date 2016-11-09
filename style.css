@@ -102,8 +102,9 @@ p {
 }
 
 .smiley {
-  padding: .6rem 5rem;
+  padding: .6rem 0;
   display: inline-block;
+  text-align: center;
 }
 
 /*.smiley-image {
@@ -136,12 +137,12 @@ p {
 }
 
 .prompts-form {
-  padding: 2rem 7rem;
+  padding: 2rem 2rem;
   margin-bottom: 6rem;
 }
 
 .prompts-form__prompt {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 400;
   margin-bottom: .5rem;
 }
@@ -178,8 +179,8 @@ p {
   border: .2rem solid #D1474C;
   color: #D1474C;
   background: transparent;
-  padding: 1rem 10rem;
-  min-width: 25rem;
+  padding: 1rem 0;
+  min-width: 30rem;
   margin: 2rem auto 0;
   cursor: pointer;
   transition: all 500ms ease;
