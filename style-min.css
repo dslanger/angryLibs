@@ -170,9 +170,10 @@ p {
   background: transparent;
   padding: 1rem 0;
   cursor: pointer;
-  transition: all 500ms ease;
+  transition: all 333ms ease;
   letter-spacing: .1rem;
   font-size: 2.4rem;
+  border-radius: .3rem;
 }
 
 .button-submit {
@@ -186,8 +187,9 @@ p {
 .button-reset:hover,
 .button-reset:active,
 .button-reset:focus {
-  color: #fff;
-  background: #D1474C;
+  /*color: #fff;
+  background: #D1474C;*/
+  box-shadow: 0 0 0 .3rem #D1474C;
 }
 
 .button-submit:active,
