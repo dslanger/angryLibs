@@ -19,17 +19,17 @@
         </div>
       </header>
 
-      <div ng-controller="MainCtrl">
+      <div ng-controller="MainCtrl as vm">
         <section class="prompts row">
           <form name="promptsForm" class="prompts-form col span-12">
           <h2 class="prompts-form__prompt">Provide the following words:</h2>
           <div class="col span-12">
-            <input type="radio" value="female" name="female" id="female" ng-model="gender"/><label for="female">My Story Has A Heroine</label><br/>
-            <input type="radio" value="male" name="male" id="male" ng-model="gender"/><label for="male">My Story Has A Hero</label>
+            <input type="radio" value="female" name="female" id="female" ng-model="vm.gender"/><label for="female">My Story Has A Heroine</label><br/>
+            <input type="radio" value="male" name="male" id="male" ng-model="vm.gender"/><label for="male">My Story Has A Hero</label>
           </div>
 
           <div class="col span-4">
-            <input type="text" placeholder="{{gender}} name" ng-model="prompt.femaleName">
+            <input type="text" placeholder="{{vm.gender}} name" ng-model="prompt.name">
             <input type="text" placeholder="job title" ng-model="prompt.jobTitle">
             <input type="text" placeholder="tedious task" ng-model="prompt.tediousTask">
           </div>
@@ -44,15 +44,14 @@
             <input type="text" placeholder="adjective" ng-model="prompt.adjective">
           </div>
           <div class="col span-12">
-            <button class="button-submit" ng-click="showStory=true; genderize();">Get A Story</button>
+            <button class="button-submit" ng-click="vm.showStory=true; vm.genderize();">Get A Story</button>
           </div>
-
           </form>
         </section>
-        <section class="story row" ng-show="showStory">
-            <p>{{prompt.femaleName}} was a {{prompt.jobTitle}} who loved technology. Alhough {{nomPronoun}} loved parts of {{posPronoun}} job, {{nomPronoun}} absolutely hated {{prompt.tediousTask}} and {{prompt.dirtyTask}}. So, {{prompt.femaleName}} met with {{posPronoun}} life mentor {{prompt.celebrity}} who told {{posPronoun}} to learn how to {{prompt.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{prompt.uselessSkill}} so {{nomPronoun}} studied programming instead.</p>
-            <p>What a great decision! With {{posPronoun}} new skills, {{prompt.femaleName}} built a(n) {{prompt.adjective}} robot named {{prompt.obnoxiousCelebrity}} that not only loved {{prompt.dirtyTask}} but did it {{prompt.hugeNumber}} times faster.</p>
-          <button class="button-reset"ng-click="reset()">Again!</button>
+        <section class="story row" ng-show="vm.showStory">
+            <p>{{prompt.name}} was a {{prompt.jobTitle}} who loved technology. Although {{vm.nomPronoun}} loved parts of {{vm.posPronoun}} job, {{vm.nomPronoun}} absolutely hated {{prompt.tediousTask}} and {{prompt.dirtyTask}}. So, {{prompt.femaleName}} met with {{vm.posPronoun}} life mentor {{prompt.celebrity}} who told {{vm.posPronoun}} to learn how to {{prompt.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{prompt.uselessSkill}} so {{vm.nomPronoun}} studied programming instead.</p>
+            <p>What a great decision! With {{vm.posPronoun}} new skills, {{prompt.femaleName}} built a(n) {{prompt.adjective}} robot named {{prompt.obnoxiousCelebrity}} that not only loved {{prompt.dirtyTask}} but did it {{prompt.hugeNumber}} times faster.</p>
+          <button class="button-reset"ng-click="vm.reset()">Again!</button>
         </section>
       </div>
 

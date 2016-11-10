@@ -1,22 +1,23 @@
 angular.module('angryLibs', [])
-  .controller('MainCtrl', function($scope) {
-    $scope.prompt = {};
-    
-    $scope.gender = 'female';
+  .controller('MainCtrl', function() {
+    var vm = this;
+    vm.prompt = {};
 
-    $scope.genderize = function() {
-      if($scope.gender === 'female') {
-        $scope.nomPronoun = 'she';
-        $scope.posPronoun = 'her';
+    vm.gender = 'female';
+
+    vm.genderize = function() {
+      if(vm.gender === 'female') {
+        vm.nomPronoun = 'she';
+        vm.posPronoun = 'her';
       } else {
-        $scope.nomPronoun = 'he';
-        $scope.posPronoun = 'his';
+        vm.nomPronoun = 'he';
+        vm.posPronoun = 'his';
       }
     };
 
 
-    $scope.reset = function() {
-      $scope.prompt = {};
-      $scope.showStory = false;
+    vm.reset = function() {
+      vm.prompt = {};
+      vm.showStory = false;
     };
   });
