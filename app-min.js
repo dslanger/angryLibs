@@ -1,1 +1,0 @@
-angular.module("angryLibs",[]).controller("MainCtrl",function(n){n.prompt={},n.gender="female",n.genderize=function(){"female"===n.gender?(n.nomPronoun="she",n.posPronoun="her"):(n.nomPronoun="he",n.posPronoun="his")},n.reset=function(){n.prompt={},n.showStory=!1}});
