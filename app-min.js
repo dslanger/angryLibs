@@ -1,1 +1,0 @@
-angular.module("angryLibs",["ngMessages"]).controller("MainCtrl",function(){var o=this;o.prompt={},o.gender="female",o.showStory=!1,o.toggleStory=function(){o.showStory=!0},o.genderize=function(){"female"===o.gender?(o.nomPronoun="she",o.posPronoun="her"):(o.nomPronoun="he",o.posPronoun="his")},o.reset=function(){o.prompt={},o.showStory=!1}});
