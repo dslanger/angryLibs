@@ -161,6 +161,18 @@ p {
   color: #999;
 }
 
+/*form validation classes*/
+.error span {
+  border: 2px solid tomato;
+  text-align: center;
+  font-size: 1.6rem;
+  padding: .5rem;
+  width: 95%;
+  margin: -2rem auto 2rem;
+  display: block;
+}
+
+
 .button-submit,
 .button-reset {
   display: block;

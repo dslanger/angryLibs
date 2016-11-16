@@ -2,7 +2,7 @@
 <html ng-app="angryLibs">
   <head>
     <meta charset="utf-8">
-    <title>angryLibs</title>
+    <title>aNGryLibs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
@@ -20,43 +20,95 @@
       </header>
 
       <div ng-controller="MainCtrl as vm">
-        <section class="prompts row">
-          <form name="promptsForm" class="prompts-form col span-12">
-          <h2 class="prompts-form__prompt">Provide the following words:</h2>
-          <div class="col span-12">
-            <input type="radio" value="female" name="female" id="female" ng-model="vm.gender"/><label for="female">My Story Has A Heroine</label><br/>
-            <input type="radio" value="male" name="male" id="male" ng-model="vm.gender"/><label for="male">My Story Has A Hero</label>
-          </div>
 
-          <div class="col span-4">
-            <input type="text" placeholder="{{vm.gender}} name" ng-model="vm.prompt.name">
-            <input type="text" placeholder="job title" ng-model="vm.prompt.jobTitle">
-            <input type="text" placeholder="tedious task" ng-model="vm.prompt.tediousTask">
-          </div>
-          <div class="col span-4">
-            <input type="text" placeholder="dirty task" ng-model="vm.prompt.dirtyTask">
-            <input type="text" placeholder="celebrity" ng-model="vm.prompt.celebrity">
-            <input type="text" placeholder="useless skill" ng-model="vm.prompt.uselessSkill">
-          </div>
-          <div class="col span-4">
-            <input type="text" placeholder="obnoxious celebrity" ng-model="vm.prompt.obnoxiousCelebrity">
-            <input type="text" placeholder="huge number" ng-model="vm.prompt.hugeNumber">
-            <input type="text" placeholder="adjective" ng-model="vm.prompt.adjective">
-          </div>
-          <div class="col span-12">
-            <button class="button-submit" ng-click="vm.showStory=true; vm.genderize();">Get A Story</button>
-          </div>
+        <section class="prompts row">
+
+          <form name="promptsForm" class="prompts-form col span-12" novalidate ng-submit="vm.toggleStory(); vm.genderize()">
+
+            <h2 class="prompts-form__prompt">Provide the following words:</h2>
+
+            <div class="col span-12">
+              <input type="radio" value="female" name="female" id="female" ng-model="vm.gender"/><label for="female">My Story Has A Heroine</label><br/>
+              <input type="radio" value="male" name="male" id="male" ng-model="vm.gender"/><label for="male">My Story Has A Hero</label>
+            </div>
+
+            <div class="col span-4">
+
+              <input type="text" name="promptName"  placeholder="{{vm.gender}} name" ng-model="vm.prompt.name" required>
+              <div class="error" ng-if="promptsForm.$submitted" ng-messages="promptsForm.promptName.$error">
+                <span ng-message="required">This is a required field.</span>
+              </div>
+
+
+              <input type="text" name="promptJob"  placeholder="job title" ng-model="vm.prompt.jobTitle" required>
+              <div class="error" ng-if="promptsForm.$submitted" ng-messages="promptsForm.promptJob.$error">
+                <span ng-message="required">This is a required field.</span>
+              </div>
+
+              <input type="text" name="promptTediousTask"  placeholder="tedious task" ng-model="vm.prompt.tediousTask" required>
+              <div class="error" ng-if="promptsForm.$submitted" ng-messages="promptsForm.promptTediousTask.$error">
+                <span ng-message="required">This is a required field.</span>
+              </div>
+
+            </div>
+
+            <div class="col span-4">
+
+              <input type="text" name="promptDirtyTask"  placeholder="dirty task" ng-model="vm.prompt.dirtyTask" required>
+              <div class="error" ng-if="promptsForm.$submitted" ng-messages="promptsForm.promptDirtyTask.$error">
+                <span ng-message="required">This is a required field.</span>
+              </div>
+
+              <input type="text" name="promptCelebrity"  placeholder="celebrity" ng-model="vm.prompt.celebrity" required>
+              <div class="error" ng-if="promptsForm.$submitted" ng-messages="promptsForm.promptCelebrity.$error">
+                <span ng-message="required">This is a required field.</span>
+              </div>
+
+              <input type="text" name="promptUselessSkill"  placeholder="useless skill" ng-model="vm.prompt.uselessSkill" required>
+              <div class="error" ng-if="promptsForm.$submitted" ng-messages="promptsForm.promptUselessSkill.$error">
+                <span ng-message="required">This is a required field.</span>
+              </div>
+
+            </div>
+
+            <div class="col span-4">
+
+              <input type="text" name="promptObnoxiousCelebrity"  placeholder="obnoxious celebrity" ng-model="vm.prompt.obnoxiousCelebrity" required>
+              <div class="error" ng-if="promptsForm.$submitted" ng-messages="promptsForm.promptObnoxiousCelebrity.$error">
+                <span ng-message="required">This is a required field.</span>
+              </div>
+
+              <input type="text" name="promptHugeNumber"  placeholder="huge number" ng-model="vm.prompt.hugeNumber" required ng-pattern="/[0-9]+/">
+              <div class="error" ng-if="promptsForm.$submitted" ng-messages="promptsForm.promptHugeNumber.$error">
+                <span ng-message="required">This is a required field.</span>
+                <span ng-message="pattern">You must enter a number.</span>
+              </div>
+
+              <input type="text" name="promptAdjective"  placeholder="adjective" ng-model="vm.prompt.adjective" required>
+              <div class="error" ng-if="promptsForm.$submitted" ng-messages="promptsForm.promptAdjective.$error">
+                <span ng-message="required">This is a required field.</span>
+              </div>
+
+            </div>
+
+            <div class="col span-12">
+              <button class="button-submit" type="submit">Get A Story</button>
+            </div>
+
           </form>
+
         </section>
-        <section class="story row" ng-show="vm.showStory">
+
+        <section class="story row" ng-if="vm.showStory">
             <p>{{vm.prompt.name}} was a {{vm.prompt.jobTitle}} who loved technology. Although {{vm.nomPronoun}} loved parts of {{vm.posPronoun}} job, {{vm.nomPronoun}} absolutely hated {{vm.prompt.tediousTask}} and {{vm.prompt.dirtyTask}}. So, {{vm.prompt.femaleName}} met with {{vm.posPronoun}} life mentor {{vm.prompt.celebrity}} who told {{vm.posPronoun}} to learn how to {{vm.prompt.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{vm.prompt.uselessSkill}} so {{vm.nomPronoun}} studied programming instead.</p>
             <p>What a great decision! With {{vm.posPronoun}} new skills, {{vm.prompt.femaleName}} built a(n) {{vm.prompt.adjective}} robot named {{vm.prompt.obnoxiousCelebrity}} that not only loved {{vm.prompt.dirtyTask}} but did it {{vm.prompt.hugeNumber}} times faster.</p>
-          <button class="button-reset"ng-click="vm.reset()">Again!</button>
+          <button class="button-reset"ng-click="vm.reset(); promptsForm.$setPristine()">Again!</button>
         </section>
       </div>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
