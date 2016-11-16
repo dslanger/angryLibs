@@ -15,7 +15,6 @@ angular.module('angryLibs', [])
       }
     };
 
-
     vm.reset = function() {
       vm.prompt = {};
       vm.showStory = false;
