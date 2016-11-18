@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-
   </head>
-  <body >
+  <body>
     <div class="wrapper" >
 
       <header class="header row">
@@ -23,7 +22,7 @@
 
         <section class="prompts row">
 
-          <form name="promptsForm" class="prompts-form col span-12" novalidate ng-submit="vm.toggleStory(); vm.genderize()">
+          <form name="promptsForm" class="prompts-form col span-12" novalidate ng-submit="vm.promptsFormSubmit()">
 
             <h2 class="prompts-form__prompt">Provide the following words:</h2>
 
@@ -102,7 +101,7 @@
         <section class="story row" ng-if="vm.showStory">
             <p>{{vm.prompt.name}} was a {{vm.prompt.jobTitle}} who loved technology. Although {{vm.nomPronoun}} loved parts of {{vm.posPronoun}} job, {{vm.nomPronoun}} absolutely hated {{vm.prompt.tediousTask}} and {{vm.prompt.dirtyTask}}. So, {{vm.prompt.femaleName}} met with {{vm.posPronoun}} life mentor {{vm.prompt.celebrity}} who told {{vm.posPronoun}} to learn how to {{vm.prompt.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{vm.prompt.uselessSkill}} so {{vm.nomPronoun}} studied programming instead.</p>
             <p>What a great decision! With {{vm.posPronoun}} new skills, {{vm.prompt.femaleName}} built a(n) {{vm.prompt.adjective}} robot named {{vm.prompt.obnoxiousCelebrity}} that not only loved {{vm.prompt.dirtyTask}} but did it {{vm.prompt.hugeNumber}} times faster.</p>
-          <button class="button-reset"ng-click="vm.reset(); promptsForm.$setPristine()">Again!</button>
+          <button class="button-reset" ng-click="vm.reset(promptsForm); ">Again!</button>
         </section>
       </div>
 

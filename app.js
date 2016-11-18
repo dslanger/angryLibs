@@ -20,11 +20,15 @@ angular.module('angryLibs', ['ngMessages'])
       }
     };
 
+    vm.promptsFormSubmit = function() {
+      vm.toggleStory();
+      vm.genderize();
+    };
 
 
-
-    vm.reset = function() {
+    vm.reset = function(form) {
       vm.prompt = {};
       vm.showStory = false;
+      form.$setPristine();
     };
   });
