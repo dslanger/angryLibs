@@ -1,4 +1,4 @@
-angular.module('angryLibs', ['ngMessages'])
+angular.module('angryLibs', ['ngMessages', 'ngAnimate'])
   .controller('MainCtrl', function() {
     var vm = this;
     vm.prompt = {};
