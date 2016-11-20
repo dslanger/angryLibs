@@ -20,8 +20,7 @@
 
       <div ng-controller="MainCtrl as vm">
 
-        <section class="prompts row">
-
+        <section class="prompts row" ng-show="!vm.showStory">
           <form name="promptsForm" class="prompts-form col span-12" novalidate ng-submit="vm.promptsFormSubmit()">
 
             <h2 class="prompts-form__prompt">Provide the following words:</h2>
@@ -98,7 +97,7 @@
 
         </section>
 
-        <section class="story row" ng-if="vm.showStory">
+        <section class="story row" ng-show="vm.showStory">
             <p>{{vm.prompt.name}} was a {{vm.prompt.jobTitle}} who loved technology. Although {{vm.nomPronoun}} loved parts of {{vm.posPronoun}} job, {{vm.nomPronoun}} absolutely hated {{vm.prompt.tediousTask}} and {{vm.prompt.dirtyTask}}. So, {{vm.prompt.femaleName}} met with {{vm.posPronoun}} life mentor {{vm.prompt.celebrity}} who told {{vm.posPronoun}} to learn how to {{vm.prompt.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{vm.prompt.uselessSkill}} so {{vm.nomPronoun}} studied programming instead.</p>
             <p>What a great decision! With {{vm.posPronoun}} new skills, {{vm.prompt.femaleName}} built a(n) {{vm.prompt.adjective}} robot named {{vm.prompt.obnoxiousCelebrity}} that not only loved {{vm.prompt.dirtyTask}} but did it {{vm.prompt.hugeNumber}} times faster.</p>
           <button class="button-reset" ng-click="vm.reset(promptsForm); ">Again!</button>
